@@ -1,0 +1,30 @@
+Introduction:-
+
+Purpose:-
+
+The “Wayfarer”-Tourist Places Information Application would provide any tourist travelling across the world hands-on detailed experience just like a local guide. Any person can sign up for the service and be saved from paying heavily for a local tour guide service. This app not only gives information about the location but an experience one wants while travelling. Helps in planning tours as places are marked as “visit” or “must visit” tags. 
+
+Scope and Product features:-
+
+The application will help following users to know more about the place as well as search for new exciting locations nearby and upgrade their knowledge.
+
+Application users:
+•	Local Travelers
+•	Tourists
+•	Tour guides
+
+Workflow:-
+
+Sign-in Page:	User can sign in using Email Id and Password.
+Sign-up Page: 	Helps User to sign up for our services.
+Home Page: Asks User for location.
+User Profile Page: Displays User entered information and allows them to edit. 
+Search results Page: Shows relevant search results based on location entered.
+Place Information Page: Gives all required information about History, recent Photos, Upcoming events.
+
+Future goals:-
+
+•	Add and update recent photos and reviews.
+•	Costumer suggestions for new locations
+•	Trip planner tool and Price estimation
+•	Create platform for interactive based tour guidance (AR - Based)

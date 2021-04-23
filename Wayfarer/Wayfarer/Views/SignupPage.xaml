@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Wayfarer.ViewModels;assembly=Wayfarer"
+             x:Class="Wayfarer.Views.SignupPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <StackLayout BackgroundColor="DarkBlue">
+                <StackLayout Padding="0,10,0,10" HorizontalOptions="Center">
+                    <Label Text="Sign Up" TextColor="White" FontSize="Large"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Padding="10,30,10,0">
+                <Frame BorderColor="Blue" HasShadow="True">
+                    <Image Source="logo_wayfarer.png" VerticalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Label Margin="30,30,0,0" Text="Hi there! Welcome to Wayfarer" FontSize="Small" TextColor="DarkBlue"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Margin="30,15,0,0" Text="Email" FontSize="Medium" TextColor="DarkBlue"/>
+                <ContentView Padding="30,0,0,0">
+                    <Entry Placeholder="Enter Your Email Id..." PlaceholderColor="DimGray" TextColor="DarkRed" ></Entry>
+                </ContentView>
+            </StackLayout>
+            <StackLayout>
+                <Label Margin="30,5,0,0" Text="Password" FontSize="Medium" TextColor="DarkBlue"/>
+                <ContentView Padding="30,0,0,0">
+                    <Entry Placeholder="Enter Your Password..." IsPassword="True" PlaceholderColor="DimGray" TextColor="DarkRed" ></Entry>
+                </ContentView>
+            </StackLayout>
+            <StackLayout>
+                <Button Margin="30,30,30,0" VerticalOptions="Center" Text="Continue" Command="{Binding SignupCommand}"/>
+            </StackLayout>
+            <StackLayout Margin="0,20,0,0" Orientation="Horizontal" HorizontalOptions="Center">
+            <StackLayout>
+                <Label Text="Have an Account?" FontSize="Medium" TextColor="DimGray"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Log In" FontSize="Medium" TextColor="DarkRed"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        NumberOfTapsRequired="1"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:SignupViewModel}}, Path=LoginCommand}"		
+                        CommandParameter="{Binding .}">
+                    </TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

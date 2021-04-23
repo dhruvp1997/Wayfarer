@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wayfarer.Views.UserProfilePage"
+             xmlns:vm="clr-namespace:Wayfarer.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:UserProfileViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">White</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="{StaticResource Accent}" >
+        <StackLayout Orientation="Horizontal" Margin="0,40,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+            <ContentView>
+                <Frame BorderColor="Blue" HasShadow="True">
+                <Image Source="Avatar.png" VerticalOptions="Center" HeightRequest="150" WidthRequest="150" />
+                </Frame>
+            </ContentView>
+        </StackLayout>
+        <StackLayout>
+            <Button Margin="100,10,100,0" Text="Change"
+                    Command="{Binding OpenWebCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+            <Label Margin="30,5,0,0" Text="Name" FontSize="Medium" TextColor="DarkBlue"/>
+            <ContentView Padding="45,0,0,0">
+                <Entry Placeholder="Enter Your Name..." Text="Dhruv Patel" PlaceholderColor="DimGray" TextColor="DarkRed" ></Entry>
+            </ContentView>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Margin="30,5,0,0" Text="Email" FontSize="Medium" TextColor="DarkBlue"/>
+            <ContentView Padding="50,0,0,0">
+                <Entry Placeholder="Enter Your Email..." Text="dhruvp1997@gmail.com" PlaceholderColor="DimGray" TextColor="DarkRed"></Entry>
+            </ContentView>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Margin="30,5,0,0" Text="Phone" FontSize="Medium" TextColor="DarkBlue"/>
+            <ContentView Padding="42,0,0,0">
+                <Entry Placeholder="Enter Your Phone Number..." Text="9586343047" PlaceholderColor="DimGray" TextColor="DarkRed" ></Entry>
+            </ContentView>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Margin="30,5,0,0" Text="Password" FontSize="Medium" TextColor="DarkBlue"/>
+            <ContentView Padding="10,0,0,0">
+                <Entry Placeholder="Enter Your Password..." Text="abcdefgh" PlaceholderColor="DimGray" TextColor="DarkRed" IsPassword="True" ></Entry>
+            </ContentView>
+        </StackLayout>
+        <StackLayout Margin="0,10,0,0">
+            <Button Margin="100,10,100,0" Text="Save"
+                    Command="{Binding OpenWebCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+        </StackLayout>
+        <StackLayout>
+            <Button Margin="100,10,100,0" Text="Logout"
+                    Clicked="Button_OnClicked"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

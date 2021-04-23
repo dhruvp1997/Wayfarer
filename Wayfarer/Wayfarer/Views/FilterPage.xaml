@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Wayfarer.ViewModels"
+             x:Class="Wayfarer.Views.FilterPage"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:FilterViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">White</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="0,30,0,0">
+                <Label Margin="30,5,0,0" Text="Search" FontSize="Medium" TextColor="DarkBlue"/>
+                <ContentView Padding="30,0,30,0">
+                    <Entry Placeholder="Enter The Location..." PlaceholderColor="DimGray" TextColor="DarkRed" ></Entry>
+                </ContentView>
+            </StackLayout>
+            <StackLayout>
+                <Label Margin="30,5,0,0" Text="Search by Filters" FontSize="Medium" TextColor="DarkBlue"/>
+                <Picker Margin="30,0,30,0" ItemDisplayBinding="{Binding CountryName}" x:Name="CountryEntry" 
+                        TitleColor="DimGray" TextColor="DimGray" Title="Select Country" ItemsSource="{Binding CountryList}">
+                </Picker>
+                <Picker Margin="30,0,30,0" ItemDisplayBinding="{Binding StateName}" x:Name="StateEntry" 
+                        TitleColor="DimGray" TextColor="DimGray" Title="Select State" ItemsSource="{Binding StateList}">
+                </Picker>
+                <Picker Margin="30,0,30,0" ItemDisplayBinding="{Binding CityName}" x:Name="CityEntry" 
+                        TitleColor="DimGray" TextColor="DimGray" Title="Select City" ItemsSource="{Binding CityList}">
+                </Picker>
+            </StackLayout>
+            <StackLayout Margin="0,30,0,0" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Submit"
+                        Clicked="Button_OnClicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            
+                <Button Text="Reset"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
